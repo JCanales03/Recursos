@@ -11,7 +11,7 @@ import java.util.List;
 public class RecursosIniciales {
 
     @Bean
-    CommandLineRunner initDatabase(RecursoRepository repository) {
+    CommandLineRunner DatosIniciales(RecursoRepository repository) {
         return args -> {
 
             if (repository.count() == 0) {

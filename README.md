@@ -1,8 +1,8 @@
 GET
-http://localhost:8084/recursos
+http://localhost:8083/recursos
 
 POST 
-http://localhost:8084/recursos
+http://localhost:8083/recursos
 {
   "nombre": "Avión Cisterna Arauco 01",
   "tipoRecurso": "Aereo",
@@ -11,4 +11,4 @@ http://localhost:8084/recursos
 }
 
 PUT
-http://localhost:8084/recursos/1/asignar/5
+http://localhost:8083/recursos/1/asignar/5

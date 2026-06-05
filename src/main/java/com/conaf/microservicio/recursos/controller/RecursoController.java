@@ -39,7 +39,7 @@ public class RecursoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Recurso> getById(@PathVariable Long id) {
+    public ResponseEntity<Recurso> RecursoPorId(@PathVariable Long id) {
         Recurso recurso = service.getRecursoId(id);
         if (recurso == null) {
             return ResponseEntity.notFound().build();
@@ -48,19 +48,19 @@ public class RecursoController {
     }
 
     @PostMapping
-    public ResponseEntity<Recurso> create(@Valid @RequestBody CreateRecursoRequest request) {
+    public ResponseEntity<Recurso> CrearRecurso(@Valid @RequestBody CreateRecursoRequest request) {
         Recurso recurso = RecursoMapper.toModel(request);
         return ResponseEntity.ok(service.saveRecurso(recurso));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Recurso> update(@PathVariable Long id, @Valid @RequestBody UpdateRecursoRequest request) {
+    public ResponseEntity<Recurso> Actualizar(@PathVariable Long id, @Valid @RequestBody UpdateRecursoRequest request) {
         Recurso recurso = RecursoMapper.toModel(id, request);
         return ResponseEntity.ok(service.updateRecurso(recurso));
     }
     
     @PutMapping("/{id}/estado")
-    public ResponseEntity<Recurso> updateEstado(@PathVariable Long id, @RequestParam String estado) {
+    public ResponseEntity<Recurso> ActualizarEstado(@PathVariable Long id, @RequestParam String estado) {
         Recurso recurso = service.getRecursoId(id);
         if (recurso == null) return ResponseEntity.notFound().build();
         recurso.setEstadoRecurso(estado);

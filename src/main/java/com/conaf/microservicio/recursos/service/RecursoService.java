@@ -42,7 +42,7 @@ public class RecursoService {
     public String asignarRecursoAIncendio(Long recursoId, Long incendioId) {
     
         webClient.get()
-            .uri("http://localhost:8091/api/incendios/" + incendioId)
+            .uri("https://incendios.onrender.com/api/incendios" + incendioId)
             .retrieve()
             .toBodilessEntity()
             .block();
